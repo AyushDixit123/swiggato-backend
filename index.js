@@ -1,18 +1,22 @@
 const express=require('express');
 const { User }=require('./Database')
 const schema = require('./Zod')
-// const cors=require('cors');
+const cors=require('cors');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs'); 
 const app = express();app.use(express.json());
-// app.use(cors({
-//     origin:"https://ayush-swigato.netlify.app/"
-// }));
+
 
 
 const Port = 3000;
 app.use(express.json());
 const JWT_SECRET = '1234';
+
+app.use(cors({
+    origin: 'https://ayush-swigato.netlify.app',
+    methods: ['GET', 'POST'], // Specify allowed methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
+  }));
 
 app.post("/signup", async (req, res) => {
     const inputData = {
