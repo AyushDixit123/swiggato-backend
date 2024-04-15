@@ -10,7 +10,7 @@ app.use(cors({
 }));
 
 
-const Port = 3000;
+// const Port = 3000;
 app.use(express.json());
 const JWT_SECRET = '1234';
 
@@ -91,6 +91,6 @@ app.get("/", (req, res) => {
 });
 
 
-app.listen(Port, () => {
-    console.log(`Server is running on port ${Port}`)});
+// app.listen(Port, () => {
+//     console.log(`Server is running on port ${Port}`)});
 
