@@ -86,6 +86,9 @@ app.post('/signin',async(req,res)=>{
 
 })
 
+app.get("/", (req, res) => {
+    res.json({ message: "Welcome to the backend API!" });
+});
 
 
 app.listen(Port, () => {
